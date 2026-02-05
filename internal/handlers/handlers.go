@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -26,14 +25,6 @@ func GetHTML(w http.ResponseWriter, r *http.Request) {
 
 // HandleUpload - хендлер для эндпонта /upload парсит загружаемый файл из формы html
 func HandleUpload(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Запрос на /upload получен")
-
-	err := r.ParseMultipartForm(10 << 20) // Максимум 10 МБ
-	if err != nil {
-		http.Error(w, "Failed to parse html form", http.StatusInternalServerError)
-		return
-	}
-
 	file, header, err := r.FormFile("myFile")
 	if err != nil {
 		http.Error(w, "Failed to get file"+err.Error(), http.StatusBadRequest)
