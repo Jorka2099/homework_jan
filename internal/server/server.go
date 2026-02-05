@@ -8,7 +8,7 @@ import (
 	"github.com/Jorka2099/homework_jan/internal/handlers"
 )
 
-//Server содержит параметр логгера и сервера
+// Server содержит параметр логгера и сервера
 type Server struct {
 	Log    *log.Logger
 	Server *http.Server

@@ -8,7 +8,7 @@ import (
 
 var StringIsMorse bool
 
-// HasLetters определяет есть ли буквы в строке
+// HasLetters определяет есть ли буквы в строке или нет
 func HasLetters(s string) bool {
 	for _, r := range s {
 		upper := unicode.ToUpper(r)
